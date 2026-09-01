@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Work Sans', system-ui, sans-serif;
+    background-color: #0284c7;
+    color: #f8fafc;
+    user-select: none;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Young Serif', Georgia, serif;
+  }
+  .font-text {
+    font-family: 'Work Sans', system-ui, sans-serif;
+  }
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS — Immersive Ocean Feel
+   ============================================ */
+
+/* Bubbles float upwards with organic wobble */
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.6);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-25vh) translateX(12px) scale(0.85);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(-8px) scale(1);
+  }
+  75% {
+    transform: translateY(-75vh) translateX(10px) scale(1.05);
+  }
+  92% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-5px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.animate-bubble-float {
+  animation: bubbleFloat 12s infinite linear;
+}
+
+/* Slow breathe-pulse for god rays */
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 5s infinite ease-in-out;
+}
+
+/* Gentle creature swimming idle bob */
+@keyframes floatSwim {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.8deg);
+  }
+}
+
+.animate-swim {
+  animation: floatSwim 6s infinite ease-in-out;
+}
+
+/* Marine snow drifting down slowly */
+@keyframes snowDrift {
+  0% {
+    transform: translateY(-10px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(45vh) translateX(15px);
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+.animate-snow-drift {
+  animation: snowDrift linear infinite;
+}
+
+/* Deep current sway — lateral movement to feel water flow */
+@keyframes currentSway {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  33% {
+    transform: translateX(8px);
+  }
+  66% {
+    transform: translateX(-6px);
+  }
+}
+
+.animate-current-sway {
+  animation: currentSway 8s infinite ease-in-out;
+}
+
+/* Bioluminescent glow throb */
+@keyframes bioGlow {
+  0%, 100% {
+    opacity: 0.15;
+    box-shadow: 0 0 4px currentColor;
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+  }
+}
+
+.animate-bio-glow {
+  animation: bioGlow ease-in-out infinite;
+}
+
+/* Caustic light pattern shimmer for shallow water */
+@keyframes causticShimmer {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-caustics {
+  animation: causticShimmer 12s infinite ease-in-out;
+}
